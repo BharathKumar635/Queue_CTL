@@ -1,0 +1,29 @@
+{
+  "name": "queuectl",
+  "version": "1.0.0",
+  "description": "CLI-based background job queue system with workers, retries, and DLQ",
+  "main": "src/index.js",
+  "bin": {
+    "queuectl": "./bin/queuectl.js"
+  },
+  "scripts": {
+    "start": "node bin/queuectl.js",
+    "test": "jest --forceExit",
+    "test:scenarios": "jest tests/scenarios --forceExit --runInBand"
+  },
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testTimeout": 120000
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["queue", "job", "worker", "cli", "dlq"],
+  "license": "MIT"
+}

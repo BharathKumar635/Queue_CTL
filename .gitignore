@@ -1,0 +1,23 @@
+node_modules/
+
+# Runtime data
+data/queue.db
+data/queue.db-shm
+data/queue.db-wal
+data/pids/
+
+# Logs
+logs/*.log
+
+# Test temp dirs
+/tmp/queuectl-test-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,7 +1,5 @@
-'use strict';
-
-const { Command } = require('commander');
-const { listDeadJobs, retryDeadJob } = require('../services/dlq.service');
+import { Command } from 'commander';
+import { listDeadJobs, retryDeadJob } from '../services/dlq.service.js';
 
 function createDlqCommand() {
   const dlqCmd = new Command('dlq')
@@ -63,4 +61,4 @@ function createDlqCommand() {
   return dlqCmd;
 }
 
-module.exports = { createDlqCommand };
+export { createDlqCommand };

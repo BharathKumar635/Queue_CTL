@@ -1,5 +1,3 @@
-'use strict';
-
 class QueueError extends Error {
   constructor(message) {
     super(message);
@@ -14,7 +12,7 @@ class DuplicateJobError extends QueueError {}
 class WorkerError extends QueueError {}
 class ConfigError extends QueueError {}
 
-module.exports = {
+export {
   QueueError,
   JobNotFoundError,
   ValidationError,

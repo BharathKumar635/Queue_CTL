@@ -1,8 +1,10 @@
-'use strict';
+import { DatabaseSync } from 'node:sqlite';
+import fs from 'node:fs';
+import pathMod from 'node:path';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const { DatabaseSync } = require('node:sqlite');
-const fs        = require('fs');
-const pathMod   = require('path');
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * Resolve the data directory.
@@ -54,4 +56,4 @@ function closeDb() {
   }
 }
 
-module.exports = { getDb, closeDb, getDataDir, getPidsDir, getDbPath };
+export { getDb, closeDb, getDataDir, getPidsDir, getDbPath };

@@ -1,9 +1,7 @@
-'use strict';
-
-const fs      = require('fs');
-const path    = require('path');
-const { getPidsDir } = require('../database/database');
-const logger  = require('../utils/logger');
+import fs from 'node:fs';
+import path from 'node:path';
+import { getPidsDir } from '../database/database.js';
+import logger from '../utils/logger.js';
 
 // ─── PID file helpers ─────────────────────────────────────────────────────────
 
@@ -77,4 +75,4 @@ function getLiveWorkerPids() {
     .filter((pid) => isProcessAlive(pid));
 }
 
-module.exports = { writePidFile, deletePidFile, stopWorkers, getLiveWorkerPids };
+export { writePidFile, deletePidFile, stopWorkers, getLiveWorkerPids };

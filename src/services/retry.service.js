@@ -1,8 +1,6 @@
-'use strict';
-
-const { updateJob }     = require('../repository/job.repository');
-const { getBackoffBase } = require('./config.service');
-const { addSeconds }    = require('../utils/time');
+import { updateJob } from '../repository/job.repository.js';
+import { getBackoffBase } from './config.service.js';
+import { addSeconds } from '../utils/time.js';
 
 /**
  * Backoff formula: delay = base ^ attempts  (seconds)
@@ -67,4 +65,4 @@ function handleJobFailure(job, output) {
   return 'failed';
 }
 
-module.exports = { handleJobSuccess, handleJobFailure, calculateBackoffDelay };
+export { handleJobSuccess, handleJobFailure, calculateBackoffDelay };

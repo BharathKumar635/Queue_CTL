@@ -1,6 +1,4 @@
-'use strict';
-
-const logger = require('../utils/logger');
+import logger from '../utils/logger.js';
 
 let _shuttingDown = false;
 const _callbacks  = [];
@@ -43,4 +41,4 @@ function setupShutdown() {
   process.on('SIGINT',  () => gracefulShutdown('SIGINT'));
 }
 
-module.exports = { setupShutdown, isShuttingDown, onShutdown };
+export { setupShutdown, isShuttingDown, onShutdown };

@@ -1,7 +1,5 @@
-'use strict';
-
-const { getJobsByState, updateJob, getJobById } = require('../repository/job.repository');
-const { JobNotFoundError }                       = require('../utils/errors');
+import { getJobsByState, updateJob, getJobById } from '../repository/job.repository.js';
+import { JobNotFoundError } from '../utils/errors.js';
 
 function listDeadJobs() {
   return getJobsByState('dead');
@@ -31,4 +29,4 @@ function retryDeadJob(id) {
   return getJobById(id);
 }
 
-module.exports = { listDeadJobs, retryDeadJob };
+export { listDeadJobs, retryDeadJob };

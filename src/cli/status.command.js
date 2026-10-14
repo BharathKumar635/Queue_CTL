@@ -1,7 +1,5 @@
-'use strict';
-
-const { Command } = require('commander');
-const { getStatus } = require('../services/status.service');
+import { Command } from 'commander';
+import { getStatus } from '../services/status.service.js';
 
 function createStatusCommand() {
   return new Command('status')
@@ -35,4 +33,4 @@ function createStatusCommand() {
     });
 }
 
-module.exports = { createStatusCommand };
+export { createStatusCommand };

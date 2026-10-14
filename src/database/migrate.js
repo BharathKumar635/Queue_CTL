@@ -1,8 +1,10 @@
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { getDb } from './database.js';
 
-const fs     = require('fs');
-const path   = require('path');
-const { getDb } = require('./database');
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 /**
  * Run the SQL schema file against the current DB connection.
@@ -14,4 +16,4 @@ function migrate() {
   db.exec(schema);
 }
 
-module.exports = { migrate };
+export { migrate };

@@ -1,13 +1,11 @@
-'use strict';
-
-const { Command } = require('commander');
-const { migrate } = require('../database/migrate');
-const { createEnqueueCommand } = require('./enqueue.command');
-const { createWorkerCommand } = require('./worker.command');
-const { createStatusCommand } = require('./status.command');
-const { createListCommand } = require('./list.command');
-const { createDlqCommand } = require('./dlq.command');
-const { createConfigCommand } = require('./config.command');
+import { Command } from 'commander';
+import { migrate } from '../database/migrate.js';
+import { createEnqueueCommand } from './enqueue.command.js';
+import { createWorkerCommand } from './worker.command.js';
+import { createStatusCommand } from './status.command.js';
+import { createListCommand } from './list.command.js';
+import { createDlqCommand } from './dlq.command.js';
+import { createConfigCommand } from './config.command.js';
 
 function buildProgram() {
   // Ensure DB migrations have run before any command executes
@@ -27,4 +25,4 @@ function buildProgram() {
   return program;
 }
 
-module.exports = { buildProgram };
+export { buildProgram };

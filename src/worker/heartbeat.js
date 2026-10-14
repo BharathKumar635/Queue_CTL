@@ -1,8 +1,6 @@
-'use strict';
-
-const { updateHeartbeat }  = require('../repository/worker.repository');
-const logger               = require('../utils/logger');
-const { DEFAULTS }         = require('../utils/constants');
+import { updateHeartbeat } from '../repository/worker.repository.js';
+import logger from '../utils/logger.js';
+import { DEFAULTS } from '../utils/constants.js';
 
 /**
  * Start a repeating heartbeat that updates `workers.last_heartbeat` for `pid`.
@@ -30,4 +28,4 @@ function stopHeartbeat(handle) {
   if (handle) clearInterval(handle);
 }
 
-module.exports = { startHeartbeat, stopHeartbeat };
+export { startHeartbeat, stopHeartbeat };

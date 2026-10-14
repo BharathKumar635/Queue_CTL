@@ -1,6 +1,4 @@
-'use strict';
-
-const { getDb } = require('../database/database');
+import { getDb } from '../database/database.js';
 
 function getConfig(key) {
   const row = getDb().prepare('SELECT value FROM config WHERE key = ?').get(key);
@@ -17,4 +15,4 @@ function getAllConfig() {
   return getDb().prepare('SELECT key, value FROM config ORDER BY key').all();
 }
 
-module.exports = { getConfig, setConfig, getAllConfig };
+export { getConfig, setConfig, getAllConfig };

@@ -1,6 +1,4 @@
-'use strict';
-
-const { nowIso } = require('../utils/time');
+import { nowIso } from '../utils/time.js';
 
 /**
  * Generate a simple UUID v4 without external dependencies.
@@ -38,4 +36,4 @@ function createJob({ id, command, max_retries }, defaultMaxRetries) {
   };
 }
 
-module.exports = { createJob, generateId };
+export { createJob, generateId };

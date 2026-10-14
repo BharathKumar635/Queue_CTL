@@ -1,7 +1,5 @@
-'use strict';
-
-const { getDb }  = require('../database/database');
-const { nowIso } = require('../utils/time');
+import { getDb } from '../database/database.js';
+import { nowIso } from '../utils/time.js';
 
 function registerWorker(record) {
   getDb().prepare(`
@@ -43,7 +41,7 @@ function cleanStaleWorkers(threshold) {
   ).run(threshold).changes;
 }
 
-module.exports = {
+export {
   registerWorker,
   deregisterWorker,
   updateHeartbeat,

@@ -1,5 +1,3 @@
-'use strict';
-
 /** All valid job lifecycle states */
 const JOB_STATES = Object.freeze({
   PENDING:    'pending',
@@ -26,4 +24,4 @@ const DEFAULTS = Object.freeze({
   WORKER_COUNT:          1,
 });
 
-module.exports = { JOB_STATES, CONFIG_KEYS, DEFAULTS };
+export { JOB_STATES, CONFIG_KEYS, DEFAULTS };

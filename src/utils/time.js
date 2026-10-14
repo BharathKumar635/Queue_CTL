@@ -1,5 +1,3 @@
-'use strict';
-
 /** Returns the current time as an ISO-8601 string */
 function nowIso() {
   return new Date().toISOString();
@@ -31,4 +29,4 @@ function msAgo(ms) {
   return new Date(Date.now() - ms).toISOString();
 }
 
-module.exports = { nowIso, addSeconds, isPast, msAgo };
+export { nowIso, addSeconds, isPast, msAgo };

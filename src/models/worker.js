@@ -1,7 +1,5 @@
-'use strict';
-
-const os        = require('os');
-const { nowIso } = require('../utils/time');
+import os from 'node:os';
+import { nowIso } from '../utils/time.js';
 
 /**
  * Build a worker registration record for the workers heartbeat table.
@@ -17,4 +15,4 @@ function createWorkerRecord(pid) {
   };
 }
 
-module.exports = { createWorkerRecord };
+export { createWorkerRecord };

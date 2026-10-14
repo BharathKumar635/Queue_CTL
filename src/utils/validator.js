@@ -1,6 +1,4 @@
-'use strict';
-
-const { ValidationError } = require('./errors');
+import { ValidationError } from './errors.js';
 
 const VALID_STATES = new Set(['pending', 'processing', 'completed', 'failed', 'dead']);
 
@@ -40,4 +38,4 @@ function validateState(state) {
   }
 }
 
-module.exports = { validateJobInput, validateState, VALID_STATES };
+export { validateJobInput, validateState, VALID_STATES };

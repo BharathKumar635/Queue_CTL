@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Schema for the config table.
  * cliKey  = the key the user types (with dashes)
@@ -27,4 +25,4 @@ function normalizeKey(key) {
   return key.replace(/-/g, '_');
 }
 
-module.exports = { CONFIG_SCHEMA, normalizeKey };
+export { CONFIG_SCHEMA, normalizeKey };

@@ -1,8 +1,6 @@
-'use strict';
-
-const { countByState }    = require('../repository/job.repository');
-const { getActiveWorkers } = require('../repository/worker.repository');
-const { listConfig }       = require('./config.service');
+import { countByState } from '../repository/job.repository.js';
+import { getActiveWorkers } from '../repository/worker.repository.js';
+import { listConfig } from './config.service.js';
 
 /**
  * Aggregate status for the `queuectl status` command.
@@ -28,4 +26,4 @@ function getStatus() {
   };
 }
 
-module.exports = { getStatus };
+export { getStatus };

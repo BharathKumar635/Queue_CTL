@@ -1,8 +1,10 @@
-'use strict';
+import { spawnSync, spawn } from 'node:child_process';
+import path from 'node:path';
+import fs from 'node:fs';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const { spawnSync, spawn } = require('child_process');
-const path = require('path');
-const fs = require('fs');
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const BIN_PATH = path.join(__dirname, '../../bin/queuectl.js');
 
@@ -76,4 +78,4 @@ function createTestEnv(testName) {
   return { dataDir, env, runCli, spawnWorker, cleanup };
 }
 
-module.exports = { createTestEnv, BIN_PATH, parseCommandString };
+export { createTestEnv, BIN_PATH, parseCommandString };

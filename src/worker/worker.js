@@ -1,16 +1,14 @@
-'use strict';
-
-const { claimJob } = require('../services/queue.service');
-const { handleJobSuccess, handleJobFailure } = require('../services/retry.service');
-const { executeCommand } = require('./executor');
-const { registerWorker, deregisterWorker } = require('../repository/worker.repository');
-const { createWorkerRecord } = require('../models/worker');
-const { startHeartbeat, stopHeartbeat } = require('./heartbeat');
-const { startRecovery, stopRecovery } = require('./recovery');
-const { setupShutdown, isShuttingDown, onShutdown } = require('./shutdown');
-const { writePidFile, deletePidFile } = require('../services/worker.service');
-const logger = require('../utils/logger');
-const { DEFAULTS } = require('../utils/constants');
+import { claimJob } from '../services/queue.service.js';
+import { handleJobSuccess, handleJobFailure } from '../services/retry.service.js';
+import { executeCommand } from './executor.js';
+import { registerWorker, deregisterWorker } from '../repository/worker.repository.js';
+import { createWorkerRecord } from '../models/worker.js';
+import { startHeartbeat, stopHeartbeat } from './heartbeat.js';
+import { startRecovery, stopRecovery } from './recovery.js';
+import { setupShutdown, isShuttingDown, onShutdown } from './shutdown.js';
+import { writePidFile, deletePidFile } from '../services/worker.service.js';
+import logger from '../utils/logger.js';
+import { DEFAULTS } from '../utils/constants.js';
 
 /**
  * Worker class representing a single execution thread/loop or worker manager.
@@ -113,4 +111,4 @@ async function startWorkers(options) {
   await runner.start();
 }
 
-module.exports = { WorkerRunner, startWorkers };
+export { WorkerRunner, startWorkers };

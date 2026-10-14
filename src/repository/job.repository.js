@@ -1,7 +1,5 @@
-'use strict';
-
-const { getDb }  = require('../database/database');
-const { nowIso } = require('../utils/time');
+import { getDb } from '../database/database.js';
+import { nowIso } from '../utils/time.js';
 
 /** Helper to execute a synchronous block inside a SQLite transaction */
 function transaction(mode, fn) {
@@ -162,7 +160,7 @@ function recoverOrphanedJobs(heartbeatThreshold) {
   });
 }
 
-module.exports = {
+export {
   insertJob,
   claimNextJob,
   getJobById,

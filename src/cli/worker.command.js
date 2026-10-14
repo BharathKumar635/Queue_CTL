@@ -1,8 +1,6 @@
-'use strict';
-
-const { Command } = require('commander');
-const { startWorkers } = require('../worker/worker');
-const { stopWorkers } = require('../services/worker.service');
+import { Command } from 'commander';
+import { startWorkers } from '../worker/worker.js';
+import { stopWorkers } from '../services/worker.service.js';
 
 function createWorkerCommand() {
   const workerCmd = new Command('worker')
@@ -41,4 +39,4 @@ function createWorkerCommand() {
   return workerCmd;
 }
 
-module.exports = { createWorkerCommand };
+export { createWorkerCommand };

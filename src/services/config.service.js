@@ -1,9 +1,7 @@
-'use strict';
-
-const { getConfig, setConfig, getAllConfig } = require('../repository/config.repository');
-const { CONFIG_SCHEMA, normalizeKey }        = require('../models/config');
-const { ConfigError }                        = require('../utils/errors');
-const { DEFAULTS }                           = require('../utils/constants');
+import { getConfig, setConfig, getAllConfig } from '../repository/config.repository.js';
+import { CONFIG_SCHEMA, normalizeKey } from '../models/config.js';
+import { ConfigError } from '../utils/errors.js';
+import { DEFAULTS } from '../utils/constants.js';
 
 function getConfigValue(key) {
   const dbKey = normalizeKey(key);
@@ -36,4 +34,4 @@ function getMaxRetries()  { return getConfigValue('max_retries'); }
 function getBackoffBase() { return getConfigValue('backoff_base'); }
 function listConfig()     { return getAllConfig(); }
 
-module.exports = { getConfigValue, setConfigValue, getMaxRetries, getBackoffBase, listConfig };
+export { getConfigValue, setConfigValue, getMaxRetries, getBackoffBase, listConfig };

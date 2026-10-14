@@ -1,6 +1,4 @@
-'use strict';
-
-const { createTestEnv } = require('../helpers/test-utils');
+import { createTestEnv } from '../helpers/test-utils.js';
 
 describe('Scenario 3: Multi-worker Concurrency Safety', () => {
   let env;

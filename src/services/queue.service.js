@@ -1,11 +1,14 @@
-'use strict';
-
-const { insertJob, claimNextJob, getJobById, getJobsByState, getAllJobs } =
-  require('../repository/job.repository');
-const { createJob }                     = require('../models/job');
-const { validateJobInput }              = require('../utils/validator');
-const { DuplicateJobError, JobNotFoundError } = require('../utils/errors');
-const { getMaxRetries }                 = require('./config.service');
+import {
+  insertJob,
+  claimNextJob,
+  getJobById,
+  getJobsByState,
+  getAllJobs,
+} from '../repository/job.repository.js';
+import { createJob } from '../models/job.js';
+import { validateJobInput } from '../utils/validator.js';
+import { DuplicateJobError, JobNotFoundError } from '../utils/errors.js';
+import { getMaxRetries } from './config.service.js';
 
 /**
  * Validate, build, and persist a new job.
@@ -41,4 +44,4 @@ function listJobs(state) {
   return state ? getJobsByState(state) : getAllJobs();
 }
 
-module.exports = { enqueueJob, claimJob, getJob, listJobs };
+export { enqueueJob, claimJob, getJob, listJobs };

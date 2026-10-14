@@ -1,8 +1,6 @@
-'use strict';
-
-const { Command } = require('commander');
-const { listJobs } = require('../services/queue.service');
-const { validateState } = require('../utils/validator');
+import { Command } from 'commander';
+import { listJobs } from '../services/queue.service.js';
+import { validateState } from '../utils/validator.js';
 
 function createListCommand() {
   return new Command('list')
@@ -59,4 +57,4 @@ function createListCommand() {
     });
 }
 
-module.exports = { createListCommand };
+export { createListCommand };

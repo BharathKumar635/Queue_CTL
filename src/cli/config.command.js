@@ -1,7 +1,5 @@
-'use strict';
-
-const { Command } = require('commander');
-const { setConfigValue, getConfigValue, listConfig } = require('../services/config.service');
+import { Command } from 'commander';
+import { setConfigValue, getConfigValue, listConfig } from '../services/config.service.js';
 
 function createConfigCommand() {
   const configCmd = new Command('config')
@@ -51,4 +49,4 @@ function createConfigCommand() {
   return configCmd;
 }
 
-module.exports = { createConfigCommand };
+export { createConfigCommand };

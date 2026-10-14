@@ -1,7 +1,9 @@
-'use strict';
+import fs from 'node:fs';
+import path from 'node:path';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const fs   = require('fs');
-const path = require('path');
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const LOGS_DIR = path.join(__dirname, '../../logs');
 const LOG_FILE = path.join(LOGS_DIR, 'worker.log');
@@ -34,4 +36,4 @@ const logger = {
   debug: (msg) => { if (process.env.QUEUECTL_DEBUG) write('debug', msg); },
 };
 
-module.exports = logger;
+export default logger;

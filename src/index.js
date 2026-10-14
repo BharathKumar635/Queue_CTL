@@ -1,22 +1,10 @@
-'use strict';
+import { migrate } from './database/migrate.js';
+export * from './services/queue.service.js';
+export * from './services/dlq.service.js';
+export * from './services/worker.service.js';
+export * from './services/status.service.js';
+export * from './services/config.service.js';
+export { startWorkers, WorkerRunner } from './worker/worker.js';
 
-const { migrate } = require('./database/migrate');
-const queueService = require('./services/queue.service');
-const dlqService = require('./services/dlq.service');
-const workerService = require('./services/worker.service');
-const statusService = require('./services/status.service');
-const configService = require('./services/config.service');
-const { startWorkers, WorkerRunner } = require('./worker/worker');
-
-// Run migrations on require
+// Run migrations on import
 migrate();
-
-module.exports = {
-  ...queueService,
-  ...dlqService,
-  ...workerService,
-  ...statusService,
-  ...configService,
-  startWorkers,
-  WorkerRunner,
-};

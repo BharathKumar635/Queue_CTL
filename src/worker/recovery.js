@@ -1,10 +1,8 @@
-'use strict';
-
-const { recoverOrphanedJobs } = require('../repository/job.repository');
-const { cleanStaleWorkers }   = require('../repository/worker.repository');
-const logger                  = require('../utils/logger');
-const { DEFAULTS }            = require('../utils/constants');
-const { msAgo }               = require('../utils/time');
+import { recoverOrphanedJobs } from '../repository/job.repository.js';
+import { cleanStaleWorkers } from '../repository/worker.repository.js';
+import logger from '../utils/logger.js';
+import { DEFAULTS } from '../utils/constants.js';
+import { msAgo } from '../utils/time.js';
 
 /**
  * Start the recovery loop.
@@ -53,4 +51,4 @@ function stopRecovery(handle) {
   if (handle) clearInterval(handle);
 }
 
-module.exports = { startRecovery, stopRecovery };
+export { startRecovery, stopRecovery };

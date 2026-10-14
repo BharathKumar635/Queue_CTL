@@ -1,7 +1,5 @@
-'use strict';
-
-const { Command } = require('commander');
-const { enqueueJob } = require('../services/queue.service');
+import { Command } from 'commander';
+import { enqueueJob } from '../services/queue.service.js';
 
 function parseJsonPayload(raw) {
   let str = raw.trim();
@@ -61,4 +59,4 @@ function createEnqueueCommand() {
     });
 }
 
-module.exports = { createEnqueueCommand, parseJsonPayload };
+export { createEnqueueCommand, parseJsonPayload };

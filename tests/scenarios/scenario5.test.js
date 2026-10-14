@@ -1,6 +1,4 @@
-'use strict';
-
-const { createTestEnv } = require('../helpers/test-utils');
+import { createTestEnv } from '../helpers/test-utils.js';
 
 describe('Scenario 5: Persistence Across Full System Restart', () => {
   let env;

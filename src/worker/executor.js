@@ -1,6 +1,4 @@
-'use strict';
-
-const { spawn } = require('child_process');
+import { spawn } from 'node:child_process';
 
 /**
  * Execute a shell command and return its exit code and combined output.
@@ -34,4 +32,4 @@ function executeCommand(command) {
   });
 }
 
-module.exports = { executeCommand };
+export { executeCommand };
